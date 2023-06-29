@@ -3,8 +3,8 @@ import argparse
 import sys
 
 bpy.ops.object.select_all(action='SELECT')
-bpy.ops.bim.override_object_delete()
-
+#bpy.ops.object.override_object_delete(use=False, confirm=False)
+bpy.ops.object.delete(use_global=False, confirm=False)
 class ArgumentParserForBlender(argparse.ArgumentParser):
     """
     This class is identical to its superclass, except for the parse_args
