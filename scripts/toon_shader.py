@@ -69,6 +69,6 @@ class ToonShader():
         self.object.data.materials.append(self.material_outline)
         # Create modifier
         mod_solidify = self.object.modifiers.new("Solidify", 'SOLIDIFY')
-        mod_solidify.thickness = -0.05
+        mod_solidify.thickness = -0.04
         mod_solidify.use_flip_normals = True
         mod_solidify.material_offset = 1

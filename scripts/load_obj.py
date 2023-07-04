@@ -42,20 +42,4 @@ class ArgumentParserForBlender(argparse.ArgumentParser):
         usage examples and details.
         """
         return super().parse_args(args=self._get_argv_after_doubledash())
-        
-parser = ArgumentParserForBlender()
-parser.add_argument("-fbx_file", "--fbx_file_path", type=str, nargs='+', help="testing", default=[])
-args = parser.parse_args()
-lst_fbx_file_path = args.fbx_file_path
-
-print("hello ", lst_fbx_file_path)
-
-for fbx_file in lst_fbx_file_path:
-    bpy.ops.import_scene.fbx( filepath = fbx_file, ignore_leaf_bones=True, automatic_bone_orientation=True, axis_forward='Y', axis_up='Z')
-
-scene = bpy.context.scene
-scene.render.image_settings.file_format='PNG'
-# Somehow this only works if absolute path is provided?
-scene.render.filepath='/home/ducb/Local-Git-Repos/Backend-contents-generation/output/rendered.png'
-bpy.ops.render.render(write_still=1)
 
