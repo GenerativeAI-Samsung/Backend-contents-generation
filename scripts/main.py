@@ -28,4 +28,4 @@ toon_shader.config_material_toon_shader()
 toon_shader.config_material_outline()
 toon_shader.apply_shader()
 
-# automatic_renderer()
+automatic_renderer()
