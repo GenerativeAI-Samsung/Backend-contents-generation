@@ -23,7 +23,7 @@ def image():
 
 @app.route('/api/name')
 def name():
-    with open("flask.json", encoding="utf-8") as f: #open file flash.json on sever
+    with open("flask.json", encoding="utf-8") as f: #open file flask.json on sever
         name = json.load(f)
         return jsonify({"name": name})
 
