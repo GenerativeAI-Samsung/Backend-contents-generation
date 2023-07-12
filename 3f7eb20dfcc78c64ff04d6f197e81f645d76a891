@@ -1,0 +1,90 @@
+[33mcommit d831aa649ee146649fc7fd68184307906f458ff9[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m)[m
+Author: LeQuocViet02 <lequocviet222000vip@gmail.com>
+Date:   Wed Jul 12 15:04:45 2023 +0700
+
+    second commit
+
+[33mcommit ff361fd8ccca1752de843261700b9feb62d3e914[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: ChuTuanDuc20182429 <duc.ct182429@sis.hust.edu.vn>
+Date:   Wed Jul 5 23:31:27 2023 +0700
+
+    Add Notebook to render on Google Colab
+
+[33mcommit 8af69e52420754d686c11601373dfc994d489503[m
+Author: ChuTuanDuc20182429 <duc.ct182429@sis.hust.edu.vn>
+Date:   Tue Jul 4 15:21:22 2023 +0700
+
+    Fix fbx importing error
+
+[33mcommit 3f7eb20dfcc78c64ff04d6f197e81f645d76a891[m
+Author: PhanTuanHust2018 <tuan23012000@gmail.com>
+Date:   Mon Jul 3 18:12:22 2023 +0700
+
+    link blender, render video through api
+
+[33mcommit 4beaedddcbc243006e89fa02faa8d6c8d837b72e[m
+Author: ChuTuanDuc20182429 <duc.ct182429@sis.hust.edu.vn>
+Date:   Mon Jul 3 11:50:37 2023 +0700
+
+    Fix modules importing error
+
+[33mcommit cadcc720dba3dedaf4c11a8bacda820fa2f43a86[m
+Author: ChuTuanDuc20182429 <duc.ct182429@sis.hust.edu.vn>
+Date:   Mon Jul 3 10:49:48 2023 +0700
+
+    Add toon shader script
+
+[33mcommit eb922744ed37caf9ef429f80d41ebbe416f52952[m
+Author: ChuTuanDuc20182429 <duc.ct182429@sis.hust.edu.vn>
+Date:   Fri Jun 30 10:50:42 2023 +0700
+
+    Modules integrated
+
+[33mcommit 3e82303f8eccd492b508b6816feb5ff0e7b54ae6[m
+Author: ChuTuanDuc20182429 <duc.ct182429@sis.hust.edu.vn>
+Date:   Fri Jun 30 00:57:56 2023 +0700
+
+    Add automatic scene renderer
+
+[33mcommit 9ec52b44b7d80c70cdd8f46fc8d6752b076fbd11[m
+Author: PhanTuanHust2018 <tuan23012000@gmail.com>
+Date:   Thu Jun 29 17:01:13 2023 +0700
+
+    fix error render object
+
+[33mcommit ba7e6dd5adc954659ba197e394dbe67373c5921a[m
+Author: ChuTuanDuc20182429 <duc.ct182429@sis.hust.edu.vn>
+Date:   Thu Jun 29 16:37:03 2023 +0700
+
+    Add shell script
+
+[33mcommit e1c374ab9143b3702fffd351f86cd7e9722dcd7e[m
+Merge: 1672163 d546628
+Author: PhanTuanHust2018 <tuan23012000@gmail.com>
+Date:   Thu Jun 29 16:22:43 2023 +0700
+
+    Merge branch 'main' of github.com:GenerativeAI-Samsung/Backend-contents-generation into main
+
+[33mcommit 1672163f1f946e9cfa9c401537fbadb148c8bdf4[m
+Author: PhanTuanHust2018 <tuan23012000@gmail.com>
+Date:   Thu Jun 29 16:20:00 2023 +0700
+
+    sever api [get] and init Lib of image object
+
+[33mcommit d5466287ff32c01b42ee66812e034b98e586991f[m
+Author: ChuTuanDuc20182429 <duc.ct182429@sis.hust.edu.vn>
+Date:   Thu Jun 29 16:15:22 2023 +0700
+
+    Update loader's mechanism to load multiple objects
+
+[33mcommit a8f8fda72d63f67cb5d94be111b6ebcb3afbf8b4[m
+Author: ChuTuanDuc20182429 <duc.ct182429@sis.hust.edu.vn>
+Date:   Thu Jun 29 11:48:13 2023 +0700
+
+    Add graphic library and object loader
+
+[33mcommit 8660c8f8737004f8e6e149f91b6b77f87449bd33[m
+Author: PhanTuanHust2018 <56782329+PhanTuanHust2018@users.noreply.github.com>
+Date:   Thu Jun 29 11:45:10 2023 +0700
+
+    Initial commit
