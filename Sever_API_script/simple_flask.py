@@ -3,10 +3,6 @@ import json
 # Create the Flask application
 app = Flask(__name__)
 
-@app.route('/')
-def index():
-    return render_template('test.html')
-
 @app.route('/video')
 def video():
     video_path = 'output/dog_video.mp4'
