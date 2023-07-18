@@ -21,10 +21,6 @@ def name():
 @app.route('/api/json', methods=['POST'])
 def handle_json():
     data = request.get_json()  # Retrieve JSON data from the request
-    # Process the JSON data and generate the video
-    # ...
-    # Return the video as a response or its URL
-    # Convert JSON object to string
     json_str = json.dumps(data)
     # Print the JSON string
     print(json_str)
@@ -33,7 +29,7 @@ def handle_json():
     # video_url = 'http://example.com/videos/video123.mp4'
     # response = {'video_url': video_url}
     # return jsonify(response)
-    video_path = '../output/dog_video.mp4'
+    video_path = '../output/1.mp4'
     return send_file(video_path, mimetype='video/mp4')
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000, debug=True)
