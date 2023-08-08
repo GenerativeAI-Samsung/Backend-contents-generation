@@ -8,8 +8,13 @@ import mysql.connector
 from mysql.connector import Error
 import os
 import json
-
-
+import cv2
+from PIL import Image
+import io
+from pix2tex.cli import LatexOCR
+import replicate
+import os
+os.environ['REPLICATE_API_TOKEN'] = 'r8_UQIrfPj3KuUBklcProhoTkVzlQmKggD0itmUp'
 def run_command(object_path):
     command = "blender --background ./virtual_studio/virtual_studio.blend --python ./scripts/main.py -- -fbx_file "
     command = command + object_path
@@ -22,10 +27,10 @@ def video():
     video_path = 'output/dog_video.mp4'
     return send_file(video_path, mimetype='video/mp4')
 
-@app.route('/get_image', methods=['GET'])
+@app.route('/get_video', methods=['POST'])
 def get_image():
     # Get the name from the query parameters
-    name = request.args.get('name')
+    # name = request.args.get('name')
 
     # Fetch the image based on the name (replace with your own logic)
     # image_path = get_image(name)
@@ -39,7 +44,7 @@ def get_image():
     # thread.join()
     # return render_template('video_display.html')
     # return send_file("output/Dog.png", mimetype='image/jpeg')
-    video_path = 'output/dog_video.mp4'
+    video_path = '../output/girl.mp4'
     return send_file(video_path, mimetype='video/mp4')
     # return send_file('/output/rendered.png0001-0105.mkv', mimetype='video/x-matroska')
 
@@ -87,6 +92,60 @@ def get_image(name):
         cursor.execute(query, params)
         result = cursor.fetchone()[0]  # Assuming there is only one row and one column
         return result
+@app.route('/latex_ocr', methods=['POST'])
 
+def process_image():
+
+    try:
+
+        # Lấy dữ liệu hình ảnh từ yêu cầu POST
+
+        image_data = request.data
+
+        print(type(image_data))
+
+        save_byte_image(image_data, '../output/image.png')
+        image = cv2.imread('../output/image.png')
+        gray_image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+        blurred_image = cv2.GaussianBlur(gray_image, (5, 5), 0)
+        _, threshold_image = cv2.threshold(blurred_image, 0, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU)
+        blurred_threshold_image = cv2.GaussianBlur(threshold_image, (25, 25), 0)
+        cv2.imwrite('../output/output_image2.jpg', blurred_threshold_image)
+        model = LatexOCR()
+        latex_ocr = model(Image.open('../output/output_image2.jpg'))
+        print(latex_ocr)
+
+        return latex_ocr, 200
+
+    except Exception as e:
+
+        # Xử lý lỗi nếu có
+
+        return str(e), 500
+
+@app.route('/image_context', methods=['POST'])
+def get_image_context():
+    image_data = request.data
+    print(type(image_data))
+
+    save_byte_image(image_data, 'output/khai.png')
+    output = replicate.run( r"methexis-inc/img2prompt:50adaf2d3ad20a6f911a8a9e3ccf777b263b8596fbd2c8fc26e8888f8a0edbb5",input={"image": open(r"output/khai.png", "rb")})
+    print(type(output))
+    return str(output)
+
+def save_byte_image(byte_data, file_path):
+
+    # Create a BytesIO object from the byte array
+
+    byte_stream = io.BytesIO(byte_data)
+
+    # Open the image using PIL
+
+    image = Image.open(byte_stream)
+    
+
+    # Save the image to the specified file path
+
+    image.save(file_path)
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000, debug=True)
