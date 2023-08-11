@@ -37,8 +37,8 @@ if response.status_code == 200:
     video_content = response.content
 
     # Save the video content to a file
-    with open('video.mp4', 'wb') as f:
-        f.write(video_content)
+    # with open('video.mp4', 'wb') as f:
+    #     f.write(video_content)
     print("true")
     # ...
 else:
