@@ -1,4 +1,4 @@
-# Backend-contents-generation
+# Backend-contents-generation (DEPRECATED)
 
-- Status: LEGACY
-  - We decided to approach the system with different desgin implication.
+- Status: DEPRECATED
+  - We decided to approach the system with different design implications.
